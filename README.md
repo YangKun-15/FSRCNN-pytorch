@@ -1,6 +1,6 @@
 # FSRCNN
 
-This repository is implementation of the ["Accelerating the Super-Resolution Convolutional Neural Network"](https://arxiv.org/abs/1608.00367).
+该存储库是后续论文的实现 ["Accelerating the Super-Resolution Convolutional Neural Network"](https://arxiv.org/abs/1608.00367)。
 
 <center><img src="./thumbnails/fig1.png"></center>
 
@@ -9,7 +9,7 @@ This repository is implementation of the ["Accelerating the Super-Resolution Con
 - Added the zero-padding
 - Used the Adam instead of the SGD
 
-## Requirements
+## 需要环境
 
 - PyTorch 1.0.0
 - Numpy 1.15.4
@@ -17,9 +17,9 @@ This repository is implementation of the ["Accelerating the Super-Resolution Con
 - h5py 2.8.0
 - tqdm 4.30.0
 
-## Train
+## 训练
 
-The 91-image, Set5 dataset converted to HDF5 can be downloaded from the links below.
+下面的91张图片组成的Set5数据集，转换成HDF5格式后，可以通过以下链接下载。
 
 | Dataset | Scale | Type | Link |
 |---------|-------|------|------|
@@ -30,7 +30,7 @@ The 91-image, Set5 dataset converted to HDF5 can be downloaded from the links be
 | Set5 | 3 | Eval | [Download](https://www.dropbox.com/s/kyhbhyc5a0qcgnp/Set5_x3.h5?dl=0) |
 | Set5 | 4 | Eval | [Download](https://www.dropbox.com/s/ihtv1acd48cof14/Set5_x4.h5?dl=0) |
 
-Otherwise, you can use `prepare.py` to create custom dataset.
+否则，您可以使用 `prepare.py` 来创建自定义数据集。
 
 ```bash
 python train.py --train-file "BLAH_BLAH/91-image_x3.h5" \
@@ -46,7 +46,7 @@ python train.py --train-file "BLAH_BLAH/91-image_x3.h5" \
 
 ## Test
 
-Pre-trained weights can be downloaded from the links below.
+预训练的权重可以从下面的链接下载。
 
 | Model | Scale | Link |
 |-------|-------|------|
@@ -54,7 +54,7 @@ Pre-trained weights can be downloaded from the links below.
 | FSRCNN(56,12,4) | 3 | [Download](https://www.dropbox.com/s/pm1ed2nyboulz5z/fsrcnn_x3.pth?dl=0) |
 | FSRCNN(56,12,4) | 4 | [Download](https://www.dropbox.com/s/vsvumpopupdpmmu/fsrcnn_x4.pth?dl=0) |
 
-The results are stored in the same path as the query image.
+结果存储在与查询图像相同的路径中。
 
 ```bash
 python test.py --weights-file "BLAH_BLAH/fsrcnn_x3.pth" \
@@ -62,9 +62,9 @@ python test.py --weights-file "BLAH_BLAH/fsrcnn_x3.pth" \
                --scale 3
 ```
 
-## Results
+## 结果
 
-PSNR was calculated on the Y channel.
+PSNR 在 Y 通道上计算。
 
 ### Set5
 
